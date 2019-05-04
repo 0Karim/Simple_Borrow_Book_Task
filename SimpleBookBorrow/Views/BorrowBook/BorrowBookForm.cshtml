@@ -1,0 +1,63 @@
+﻿@model SimpleBookBorrow.Models.BorrowedBooks
+
+@{
+    ViewBag.Title = "BorrowBookForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Borrow Book</h2>
+
+<form>
+    <div class="row form-group">
+        <div class="col-md-6">
+            <label for="firstname">Book List</label>
+            @*<input type="text" id="firstname" class="form-control" placeholder="Enter First name">*@
+            @if (ViewBag.booksList != null)
+            {
+                @Html.DropDownListFor(model => model.BookID , ViewBag.booksList as SelectList , "-- Select Book --" , new {@class="form-control" })
+            }
+        </div>
+        <div class="col-md-6">
+            <label for="lastname">Borrow List</label>
+            @*<input type="text" id="lastname" class="form-control" placeholder="Enter Last name">*@
+            @if (ViewBag.borrowerList != null)
+            {
+                @Html.DropDownListFor(model => model.BorrowerID, ViewBag.borrowerList as SelectList, "-- Select Borrower --", new { @class = "form-control" })
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-4"></div>
+        <input type="button" class="btn btn-success col-sm-6" value="Save" />
+    </div>
+</form>
+
+<br />
+
+<h2>All Books</h2>
+<table class="table table-hover table-bordered table-responsive" id="book">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Avilable Books</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+
+<h4>Borrowed Books Table</h4>
+<table class="table table-hover table-bordered table-responsive" id="bookborrowtable">
+    <thead>
+        <tr>
+            <th>Book Name</th>
+            <th>Borrow Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+
+<script src="~/scripts/jquery-1.10.2.min.js"></script>
+<script src="~/scripts/BorrowBook_jqueryAjax/BorrowBookScripte.js"></script>

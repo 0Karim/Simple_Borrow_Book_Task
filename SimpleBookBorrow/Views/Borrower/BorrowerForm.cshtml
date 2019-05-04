@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "BorrowerForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Add New Borrower</h2>
+<form action="#" method="post" class="form-horizontal">
+    <div class="row form-group">
+        <div class="col-md-6">
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" class="form-control" placeholder="Enter First name">
+        </div>
+        <div class="col-md-6">
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" class="form-control" placeholder="Enter Last name">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-md-6">
+            <label for="mobileno">Mobile No</label>
+            <input type="number" id="mobileno" class="form-control" placeholder="Enter Mobile Number">
+        </div>
+
+
+        <label>Gender</label>
+        <div class="col-md-6" >
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="genderoptions" id="male" value="Male">
+                <label class="form-check-label" for="male">
+                    Male
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="genderoptions" id="female" value="Female">
+                <label class="form-check-label" for="female">
+                    Female
+                </label>
+            </div>
+        </div>
+
+
+        <div>
+            <input type="hidden" id="borrower_Id" />
+        </div>
+    </div>
+        <div class="form-group">
+        <div class="col-sm-4"></div>
+        <input type="button" class="btn btn-success col-sm-6" value="Save" />
+    </div>
+</form>
+
+
+<h4>Borrowers</h4>
+<table class="table table-hover table-bordered table-responsive" id="borrowtable">
+    <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Mobile No</th>
+            <th>Gender</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+
+<script src="~/scripts/jquery-1.10.2.min.js"></script>
+<script src="~/scripts/Borrow_jqueryAjax/Borrow_Scipte.js"></script>
+
+
